@@ -38,7 +38,7 @@ public class SortKSortedArray {
 		int[] inp1 = {9, 8, 7, 18, 19, 17};
 		int k1 = 2;
 		int[] sortedArr = sortKSortedArray.sortKSortedArray(inp1, k1);
-		List<Integer> sortedList = Arrays.stream(sortedArr).boxed().collect(Collectors.toList());
+		List<Object> sortedList = Arrays.stream(sortedArr).boxed().collect(Collectors.toList());
 		System.out.println(sortedList);
 		
 		int[] inp2 = {10, 9,7, 8, 4, 70, 50, 60};

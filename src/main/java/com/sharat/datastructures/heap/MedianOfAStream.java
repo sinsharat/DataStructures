@@ -10,7 +10,7 @@ public class MedianOfAStream {
 		PriorityQueue<Integer> rightQueue = new PriorityQueue<>();
 		int totalQueueSize = 0;
 		float median;
-		for (int streamNum: stream) {
+		for (int streamNum : stream) {
 			totalQueueSize++;
 			if (totalQueueSize % 2 != 0) {
 				if (leftQueue.peek() != null && leftQueue.peek() < streamNum) {
@@ -18,24 +18,23 @@ public class MedianOfAStream {
 					streamNum = rightQueue.poll();
 				}
 				leftQueue.add(streamNum);
-				System.out.print(new Float(leftQueue.peek()) + " ");
+				System.out.print((float) leftQueue.peek() + " ");
 			} else {
 				if (leftQueue.peek() > streamNum) {
 					leftQueue.add(streamNum);
 					streamNum = leftQueue.poll();
 				}
 				rightQueue.add(streamNum);
-				median = new Float(leftQueue.peek() + rightQueue.peek())/2;
+				median = (float) (leftQueue.peek() + rightQueue.peek()) / 2;
 				System.out.print(median + " ");
 			}
 		}
 
 	}
-	
-	
+
 	public static void main(String[] args) {
-		int[] stream = {12, 15, 10, 5, 8, 7, 16};
-		// 
+		int[] stream = { 12, 15, 10, 5, 8, 7, 16 };
+		//
 		MedianOfAStream medianOfAStream = new MedianOfAStream();
 		System.out.println("Median of streams:");
 		medianOfAStream.findMedians(stream);
